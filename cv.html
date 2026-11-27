@@ -9,17 +9,22 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
     }
 
     body {
       background: #e2e8f0;
       font-family: Arial, Helvetica, sans-serif;
       color: #1e293b;
-      line-height: 1.4;
-      padding: 24px 10px;
+      line-height: 1.35;
+      padding: 20px 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
     }
 
     /* Top Floating Print Bar */
@@ -29,11 +34,22 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       padding: 10px 16px;
       background: #0c1527;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .print-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .print-tip {
+      font-size: 11px;
+      color: #94a3b8;
     }
 
     .print-bar a, .print-bar button {
@@ -70,63 +86,65 @@
     .cv-sheet {
       width: 100%;
       max-width: 800px;
-      background: #ffffff;
+      background: #ffffff !important;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
-      font-size: 11px;
+      font-size: 10.5px;
       color: #1a202c;
+      overflow: hidden;
     }
 
     /* HEADER BANNER */
     .cv-header {
-      background: #0c1527;
-      padding: 34px 40px 22px;
+      background: #0c1527 !important;
+      padding: 24px 34px 16px;
       color: #ffffff;
-      border-bottom: 4px solid #e5a93b;
+      border-bottom: 4px solid #e5a93b !important;
     }
 
     .cv-header h1 {
-      font-size: 32px;
+      font-size: 28px;
       font-weight: 900;
       letter-spacing: 0.5px;
-      color: #ffffff;
+      color: #ffffff !important;
       line-height: 1.1;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .cv-header .subtitle {
-      font-size: 13.5px;
+      font-size: 12.5px;
       font-weight: bold;
-      color: #e5a93b;
+      color: #e5a93b !important;
       letter-spacing: 0.8px;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .cv-header .tagline {
-      font-size: 11px;
-      color: #cbd5e1;
+      font-size: 10.5px;
+      color: #cbd5e1 !important;
       font-weight: normal;
     }
 
     /* 2-COLUMN BODY */
     .cv-body {
       display: flex;
-      padding: 24px 34px 30px;
-      gap: 30px;
+      padding: 16px 28px 18px;
+      gap: 26px;
+      background: #ffffff !important;
     }
 
     /* LEFT SIDEBAR (~30%) */
     .cv-left {
-      width: 200px;
+      width: 190px;
       flex-shrink: 0;
     }
 
     .left-sec-title {
-      font-size: 11.5px;
+      font-size: 11px;
       font-weight: 900;
-      color: #0c1527;
+      color: #0c1527 !important;
       letter-spacing: 0.5px;
-      margin-top: 16px;
-      margin-bottom: 6px;
+      margin-top: 11px;
+      margin-bottom: 4px;
     }
 
     .left-sec-title:first-child {
@@ -134,53 +152,53 @@
     }
 
     .contact-item {
-      margin-bottom: 7px;
+      margin-bottom: 5px;
     }
 
     .contact-lbl {
-      font-size: 9px;
+      font-size: 8.5px;
       font-weight: bold;
-      color: #0c1527;
+      color: #0c1527 !important;
       letter-spacing: 0.4px;
       display: block;
       margin-bottom: 1px;
     }
 
     .contact-val {
-      font-size: 10.5px;
-      color: #334155;
+      font-size: 10px;
+      color: #334155 !important;
       text-decoration: none;
       word-break: break-all;
     }
 
     .pill-blue {
       display: inline-block;
-      background: #5ab0c9;
-      color: #ffffff;
-      font-size: 8.5px;
+      background: #5ab0c9 !important;
+      color: #ffffff !important;
+      font-size: 8px;
       font-weight: bold;
       letter-spacing: 0.3px;
       padding: 1.5px 6px;
       border-radius: 3px;
-      margin-bottom: 3px;
+      margin-bottom: 2px;
     }
 
     .sub-item {
-      margin-bottom: 7px;
+      margin-bottom: 5px;
     }
 
     .sub-lbl {
-      font-size: 9px;
+      font-size: 8.5px;
       font-weight: bold;
-      color: #0c1527;
+      color: #0c1527 !important;
       display: block;
       margin-bottom: 1px;
     }
 
     .sub-txt {
-      font-size: 10px;
-      color: #334155;
-      line-height: 1.4;
+      font-size: 9.5px;
+      color: #334155 !important;
+      line-height: 1.35;
     }
 
     /* RIGHT MAIN COLUMN (~70%) */
@@ -189,12 +207,12 @@
     }
 
     .right-sec-title {
-      font-size: 11.5px;
+      font-size: 11px;
       font-weight: 900;
-      color: #0c1527;
+      color: #0c1527 !important;
       letter-spacing: 0.5px;
-      margin-top: 16px;
-      margin-bottom: 7px;
+      margin-top: 11px;
+      margin-bottom: 5px;
     }
 
     .right-sec-title:first-child {
@@ -202,48 +220,48 @@
     }
 
     .prof-profile {
-      font-size: 10px;
-      line-height: 1.45;
-      color: #334155;
-      margin-bottom: 12px;
+      font-size: 9.6px;
+      line-height: 1.4;
+      color: #334155 !important;
+      margin-bottom: 8px;
     }
 
     .prof-profile strong {
-      color: #0f172a;
+      color: #0f172a !important;
     }
 
     /* CORE EXPERTISE 2x2 GRID */
     .core-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin-bottom: 14px;
+      gap: 6px;
+      margin-bottom: 10px;
     }
 
     .core-box {
-      background: #f8f9fa;
-      border-left: 3.5px solid #e5a93b;
-      padding: 6px 10px;
+      background: #f8f9fa !important;
+      border-left: 3px solid #e5a93b !important;
+      padding: 5px 8px;
     }
 
     .core-box strong {
       display: block;
-      font-size: 10px;
+      font-size: 9.5px;
       font-weight: bold;
-      color: #0c1527;
+      color: #0c1527 !important;
       margin-bottom: 1px;
     }
 
     .core-box span {
       display: block;
-      font-size: 9px;
-      color: #64748b;
-      line-height: 1.35;
+      font-size: 8.5px;
+      color: #64748b !important;
+      line-height: 1.3;
     }
 
     /* EXPERIENCE SECTION */
     .exp-entry {
-      margin-bottom: 12px;
+      margin-bottom: 9px;
     }
 
     .exp-header {
@@ -254,26 +272,26 @@
     }
 
     .exp-title {
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: bold;
-      color: #0c1527;
+      color: #0c1527 !important;
     }
 
     .exp-duration {
-      font-size: 10px;
-      color: #64748b;
+      font-size: 9.5px;
+      color: #64748b !important;
     }
 
     .exp-duration.present {
-      color: #0c1527;
+      color: #0c1527 !important;
       font-weight: bold;
     }
 
     .exp-company {
-      font-size: 10.5px;
+      font-size: 10px;
       font-style: italic;
-      color: #2a8e9d;
-      margin-bottom: 4px;
+      color: #2a8e9d !important;
+      margin-bottom: 3px;
     }
 
     .exp-list {
@@ -283,44 +301,44 @@
 
     .exp-list li {
       position: relative;
-      padding-left: 12px;
-      font-size: 9.8px;
-      line-height: 1.45;
-      color: #334155;
-      margin-bottom: 3.5px;
+      padding-left: 11px;
+      font-size: 9.2px;
+      line-height: 1.38;
+      color: #334155 !important;
+      margin-bottom: 2.5px;
     }
 
     .exp-list li::before {
       content: "•";
       position: absolute;
-      left: 2px;
-      color: #0c1527;
+      left: 1px;
+      color: #0c1527 !important;
       font-weight: bold;
     }
 
     .exp-list strong {
-      color: #0f172a;
+      color: #0f172a !important;
     }
 
     /* CERTIFICATION & EDUCATION */
     .cert-item {
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .cert-title {
-      font-size: 10.5px;
+      font-size: 10px;
       font-weight: bold;
-      color: #0c1527;
+      color: #0c1527 !important;
       margin-bottom: 1px;
     }
 
     .cert-detail {
-      font-size: 9.5px;
-      color: #64748b;
+      font-size: 9px;
+      color: #64748b !important;
     }
 
     .edu-entry {
-      margin-bottom: 8px;
+      margin-bottom: 5px;
     }
 
     .edu-header {
@@ -331,26 +349,29 @@
     }
 
     .edu-degree {
-      font-size: 10.5px;
+      font-size: 10px;
       font-weight: bold;
-      color: #0c1527;
+      color: #0c1527 !important;
     }
 
     .edu-year {
-      font-size: 9.5px;
-      color: #64748b;
+      font-size: 9px;
+      color: #64748b !important;
     }
 
     .edu-college {
-      font-size: 9.5px;
-      color: #64748b;
+      font-size: 9px;
+      color: #64748b !important;
     }
 
-    /* PRINT TO EXACT A4 */
+    /* EXACT 1-PAGE A4 PRINT RULES */
     @media print {
-      body {
-        background: #ffffff;
-        padding: 0;
+      html, body {
+        background: #ffffff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
       }
 
       .print-bar {
@@ -358,13 +379,22 @@
       }
 
       .cv-sheet {
-        box-shadow: none;
-        max-width: 100%;
+        box-shadow: none !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        border: none !important;
+        margin: 0 !important;
+        page-break-after: avoid !important;
+        page-break-inside: avoid !important;
+      }
+
+      .cv-body {
+        padding: 14px 24px 10px !important;
       }
 
       @page {
-        size: A4;
-        margin: 0;
+        size: A4 portrait;
+        margin: 0mm !important;
       }
     }
   </style>
@@ -373,9 +403,12 @@
 
   <!-- Print Action Bar -->
   <div class="print-bar">
-    <a href="index.html" class="btn-back">
-      <span>← Back to Portfolio</span>
-    </a>
+    <div class="print-bar-left">
+      <a href="index.html" class="btn-back">
+        <span>← Back to Portfolio</span>
+      </a>
+      <span class="print-tip">✓ Optimized for 1-Page A4 PDF</span>
+    </div>
     <button onclick="window.print()" class="btn-print">
       <span>🖨️ Print / Save as PDF</span>
     </button>
@@ -544,7 +577,7 @@
           <div class="edu-college">Kamla Lohtia Sanatan Dharam College, Ludhiana</div>
         </div>
         <div class="edu-entry">
-          <div class="edu-degree" style="font-size: 10px;">Senior Secondary (10+2) 86%</div>
+          <div class="edu-degree" style="font-size: 9.5px;">Senior Secondary (10+2) 86%</div>
           <div class="edu-college">Sanatan Vidya Mandir Sen. Sec. School, Ludhiana (PSEB)</div>
         </div>
 
