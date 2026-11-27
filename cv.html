@@ -19,7 +19,7 @@
       font-family: Arial, Helvetica, sans-serif;
       color: #1e293b;
       line-height: 1.35;
-      padding: 20px 10px;
+      padding: 16px 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -30,12 +30,12 @@
     /* Top Floating Print Bar */
     .print-bar {
       width: 100%;
-      max-width: 800px;
+      max-width: 780px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 14px;
-      padding: 10px 16px;
+      margin-bottom: 12px;
+      padding: 9px 16px;
       background: #0c1527;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -49,14 +49,15 @@
 
     .print-tip {
       font-size: 11px;
-      color: #94a3b8;
+      color: #38bdf8;
+      font-weight: 600;
     }
 
     .print-bar a, .print-bar button {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 7px 14px;
+      padding: 6px 14px;
       border-radius: 6px;
       font-size: 12px;
       font-weight: bold;
@@ -85,41 +86,60 @@
     /* Standard A4 CV Container */
     .cv-sheet {
       width: 100%;
-      max-width: 800px;
+      max-width: 780px;
       background: #ffffff !important;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
       font-size: 10.5px;
       color: #1a202c;
       overflow: hidden;
+      position: relative;
     }
 
-    /* HEADER BANNER */
+    /* HEADER BANNER WITH ALWAYS-PRINT SVG BACKGROUND */
     .cv-header {
-      background: #0c1527 !important;
-      padding: 24px 34px 16px;
+      position: relative;
+      background: #0c1527;
+      padding: 22px 32px 16px;
       color: #ffffff;
-      border-bottom: 4px solid #e5a93b !important;
+      border-bottom: 4px solid #e5a93b;
+      overflow: hidden;
+    }
+
+    /* SVG Background ensures colors NEVER fade even if browser Background Graphics is unticked */
+    .header-svg-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
     }
 
     .cv-header h1 {
-      font-size: 28px;
+      font-size: 27px;
       font-weight: 900;
       letter-spacing: 0.5px;
       color: #ffffff !important;
       line-height: 1.1;
-      margin-bottom: 3px;
+      margin-bottom: 2px;
     }
 
     .cv-header .subtitle {
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: bold;
       color: #e5a93b !important;
       letter-spacing: 0.8px;
-      margin-bottom: 3px;
+      margin-bottom: 2px;
     }
 
     .cv-header .tagline {
-      font-size: 10.5px;
+      font-size: 10px;
       color: #cbd5e1 !important;
       font-weight: normal;
     }
@@ -127,24 +147,24 @@
     /* 2-COLUMN BODY */
     .cv-body {
       display: flex;
-      padding: 16px 28px 18px;
+      padding: 14px 28px 16px;
       gap: 26px;
       background: #ffffff !important;
     }
 
-    /* LEFT SIDEBAR (~30%) */
+    /* LEFT SIDEBAR (~28%) */
     .cv-left {
-      width: 190px;
+      width: 185px;
       flex-shrink: 0;
     }
 
     .left-sec-title {
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 900;
       color: #0c1527 !important;
       letter-spacing: 0.5px;
-      margin-top: 11px;
-      margin-bottom: 4px;
+      margin-top: 10px;
+      margin-bottom: 3px;
     }
 
     .left-sec-title:first-child {
@@ -152,43 +172,42 @@
     }
 
     .contact-item {
-      margin-bottom: 5px;
+      margin-bottom: 4px;
     }
 
     .contact-lbl {
-      font-size: 8.5px;
+      font-size: 8px;
       font-weight: bold;
       color: #0c1527 !important;
       letter-spacing: 0.4px;
       display: block;
-      margin-bottom: 1px;
+      margin-bottom: 0px;
     }
 
     .contact-val {
-      font-size: 10px;
+      font-size: 9.5px;
       color: #334155 !important;
       text-decoration: none;
       word-break: break-all;
     }
 
-    .pill-blue {
+    /* Pill badge using SVG vector so it NEVER washes out */
+    .pill-wrap {
       display: inline-block;
-      background: #5ab0c9 !important;
-      color: #ffffff !important;
-      font-size: 8px;
-      font-weight: bold;
-      letter-spacing: 0.3px;
-      padding: 1.5px 6px;
-      border-radius: 3px;
       margin-bottom: 2px;
     }
 
+    .pill-blue-svg {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
     .sub-item {
-      margin-bottom: 5px;
+      margin-bottom: 4px;
     }
 
     .sub-lbl {
-      font-size: 8.5px;
+      font-size: 8px;
       font-weight: bold;
       color: #0c1527 !important;
       display: block;
@@ -196,23 +215,23 @@
     }
 
     .sub-txt {
-      font-size: 9.5px;
+      font-size: 9.2px;
       color: #334155 !important;
-      line-height: 1.35;
+      line-height: 1.32;
     }
 
-    /* RIGHT MAIN COLUMN (~70%) */
+    /* RIGHT MAIN COLUMN (~72%) */
     .cv-right {
       flex: 1;
     }
 
     .right-sec-title {
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 900;
       color: #0c1527 !important;
       letter-spacing: 0.5px;
-      margin-top: 11px;
-      margin-bottom: 5px;
+      margin-top: 9px;
+      margin-bottom: 4px;
     }
 
     .right-sec-title:first-child {
@@ -220,10 +239,10 @@
     }
 
     .prof-profile {
-      font-size: 9.6px;
-      line-height: 1.4;
+      font-size: 9.2px;
+      line-height: 1.36;
       color: #334155 !important;
-      margin-bottom: 8px;
+      margin-bottom: 7px;
     }
 
     .prof-profile strong {
@@ -235,18 +254,21 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 6px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .core-box {
       background: #f8f9fa !important;
-      border-left: 3px solid #e5a93b !important;
-      padding: 5px 8px;
+      border-left: 3.5px solid #e5a93b !important;
+      border-top: 1px solid #f1f5f9;
+      border-right: 1px solid #f1f5f9;
+      border-bottom: 1px solid #f1f5f9;
+      padding: 4px 7px;
     }
 
     .core-box strong {
       display: block;
-      font-size: 9.5px;
+      font-size: 9px;
       font-weight: bold;
       color: #0c1527 !important;
       margin-bottom: 1px;
@@ -254,44 +276,45 @@
 
     .core-box span {
       display: block;
-      font-size: 8.5px;
+      font-size: 8px;
       color: #64748b !important;
-      line-height: 1.3;
+      line-height: 1.25;
     }
 
     /* EXPERIENCE SECTION */
     .exp-entry {
-      margin-bottom: 9px;
+      margin-bottom: 7px;
     }
 
     .exp-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 1px;
+      margin-bottom: 0px;
     }
 
     .exp-title {
-      font-size: 10.5px;
+      font-size: 10px;
       font-weight: bold;
       color: #0c1527 !important;
     }
 
     .exp-duration {
-      font-size: 9.5px;
+      font-size: 9px;
       color: #64748b !important;
     }
 
     .exp-duration.present {
-      color: #0c1527 !important;
+      color: #10b981 !important;
       font-weight: bold;
     }
 
     .exp-company {
-      font-size: 10px;
+      font-size: 9.5px;
       font-style: italic;
       color: #2a8e9d !important;
-      margin-bottom: 3px;
+      margin-bottom: 2px;
+      font-weight: 600;
     }
 
     .exp-list {
@@ -301,11 +324,11 @@
 
     .exp-list li {
       position: relative;
-      padding-left: 11px;
-      font-size: 9.2px;
-      line-height: 1.38;
+      padding-left: 10px;
+      font-size: 8.8px;
+      line-height: 1.34;
       color: #334155 !important;
-      margin-bottom: 2.5px;
+      margin-bottom: 1.5px;
     }
 
     .exp-list li::before {
@@ -322,45 +345,45 @@
 
     /* CERTIFICATION & EDUCATION */
     .cert-item {
-      margin-bottom: 8px;
+      margin-bottom: 5px;
     }
 
     .cert-title {
-      font-size: 10px;
+      font-size: 9.5px;
       font-weight: bold;
       color: #0c1527 !important;
-      margin-bottom: 1px;
+      margin-bottom: 0px;
     }
 
     .cert-detail {
-      font-size: 9px;
+      font-size: 8.5px;
       color: #64748b !important;
     }
 
     .edu-entry {
-      margin-bottom: 5px;
+      margin-bottom: 3px;
     }
 
     .edu-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 1px;
+      margin-bottom: 0px;
     }
 
     .edu-degree {
-      font-size: 10px;
+      font-size: 9.5px;
       font-weight: bold;
       color: #0c1527 !important;
     }
 
     .edu-year {
-      font-size: 9px;
+      font-size: 8.5px;
       color: #64748b !important;
     }
 
     .edu-college {
-      font-size: 9px;
+      font-size: 8.5px;
       color: #64748b !important;
     }
 
@@ -389,7 +412,7 @@
       }
 
       .cv-body {
-        padding: 14px 24px 10px !important;
+        padding: 10px 24px 8px !important;
       }
 
       @page {
@@ -407,7 +430,7 @@
       <a href="index.html" class="btn-back">
         <span>← Back to Portfolio</span>
       </a>
-      <span class="print-tip">✓ Optimized for 1-Page A4 PDF</span>
+      <span class="print-tip">✓ 1-Page A4 Guarantee • Vector Protected Colors</span>
     </div>
     <button onclick="window.print()" class="btn-print">
       <span>🖨️ Print / Save as PDF</span>
@@ -417,11 +440,17 @@
   <!-- A4 CV Sheet (Exact Original CV Design) -->
   <div class="cv-sheet">
     
-    <!-- HEADER -->
+    <!-- HEADER WITH VECTOR SVG BACKGROUND (Never washes out in print) -->
     <header class="cv-header">
-      <h1>PUNEET OHRI</h1>
-      <div class="subtitle">AI VIDEO EDITOR | PROMPT ENGINEER</div>
-      <div class="tagline">Photorealistic AI Filmmaking • JSON Prompt Systems • Premiere Pro Post-Production</div>
+      <svg class="header-svg-bg" viewBox="0 0 800 100" preserveAspectRatio="none">
+        <rect width="800" height="96" fill="#0c1527" />
+        <rect y="96" width="800" height="4" fill="#e5a93b" />
+      </svg>
+      <div class="header-content">
+        <h1>PUNEET OHRI</h1>
+        <div class="subtitle">AI VIDEO EDITOR | PROMPT ENGINEER</div>
+        <div class="tagline">Photorealistic AI Filmmaking • JSON Prompt Systems • Premiere Pro Post-Production</div>
+      </div>
     </header>
 
     <!-- BODY -->
@@ -450,7 +479,12 @@
 
         <div class="left-sec-title">AI FILM PRODUCTION</div>
         <div class="sub-item">
-          <span class="pill-blue">GENERATION</span>
+          <div class="pill-wrap">
+            <svg class="pill-blue-svg" width="76" height="15" viewBox="0 0 76 15">
+              <rect width="76" height="15" rx="3" fill="#5ab0c9" />
+              <text x="38" y="11" fill="#ffffff" font-size="8.5" font-weight="bold" font-family="Arial, sans-serif" text-anchor="middle">GENERATION</text>
+            </svg>
+          </div>
           <div class="sub-txt">
             Runway ML • Higgsfield<br>
             Google Flow • Seedance<br>
@@ -473,6 +507,8 @@
         <div class="left-sec-title">POST-PRODUCTION</div>
         <div class="sub-txt">
           Adobe Premiere Pro<br>
+          Adobe After Effects<br>
+          DaVinci Resolve<br>
           Adobe Photoshop<br>
           AI-based video editing<br>
           Colour grading • Transitions
@@ -533,15 +569,14 @@
         <div class="exp-entry">
           <div class="exp-header">
             <span class="exp-title">AI Video Editor &amp; Prompt Engineer</span>
-            <span class="exp-duration present">Present</span>
+            <span class="exp-duration present">2026 — Present</span>
           </div>
           <div class="exp-company">MoreTasks — AI Video &amp; Creative Agency</div>
           <ul class="exp-list">
-            <li>Lead commercial AI video production, prompt architecture, and post-production pipelines for high-retention digital campaigns.</li>
-            <li>Achieve <strong>realistic human portrayal and character consistency</strong> across multi-scene generations using <strong>Runway ML Gen-3</strong> and <strong>Higgsfield</strong>.</li>
+            <li>Lead commercial AI video production, prompt architecture, and post-production pipelines for high-retention campaigns.</li>
+            <li>Achieve <strong>character consistency and realistic human portrayal</strong> across multi-scene video generations using <strong>Runway ML Gen-3</strong> and <strong>Higgsfield</strong>.</li>
             <li>Engineer <strong>structured JSON-based prompt systems</strong> and automated generation flows using <strong>Claude AI</strong> and <strong>Custom GPTs</strong>.</li>
-            <li>Edit and post-produce commercial video assets in <strong>Adobe Premiere Pro</strong>, <strong>DaVinci Resolve</strong>, and <strong>After Effects</strong>: colour grading, sound design, and pacing.</li>
-            <li>Work alongside production leads to deliver production-ready 4K video assets and high-converting marketing reels.</li>
+            <li>Execute master-grade editing, color grading, sound design, and motion timing in <strong>Adobe Premiere Pro</strong>, <strong>DaVinci Resolve</strong>, and <strong>After Effects</strong>.</li>
           </ul>
         </div>
 
@@ -553,12 +588,10 @@
           </div>
           <div class="exp-company">Holyindia — AI Filmmaking Project</div>
           <ul class="exp-list">
-            <li>Followed the <strong>complete AI filmmaking pipeline end to end</strong> on Holyindia: <strong>character design, image generation, storyboarding, video generation and final post-production</strong>.</li>
-            <li>Produced <strong>high-quality mythological video content</strong> for an AI filmmaking project using <strong>Runway ML</strong> and <strong>Higgsfield</strong>.</li>
-            <li>Achieved <strong>realistic human portrayal</strong> in AI-generated footage: natural facial detail, authentic emotion and convincing actor-like performance, elevating characters from synthetic to lifelike.</li>
-            <li>Designed and built a <strong>custom GPT</strong> on a <strong>structured JSON-based prompt system</strong> to streamline and standardize AI video generation.</li>
-            <li>Edited and post-produced AI footage in <strong>Adobe Premiere Pro</strong>: cutting, color grading and transitions for production-ready delivery.</li>
-            <li>Worked alongside the production lead to refine prompt workflows and <strong>maintain visual consistency across episodes</strong>.</li>
+            <li>Followed the <strong>complete AI filmmaking pipeline end-to-end</strong>: character design, image generation, storyboarding, video generation, and final post-production.</li>
+            <li>Produced <strong>high-quality mythological video content</strong> using <strong>Runway ML</strong> and <strong>Higgsfield</strong> with authentic facial detail and actor-grade emotion.</li>
+            <li>Designed and built a <strong>custom GPT</strong> on a <strong>structured JSON-based prompt system</strong> to streamline AI video generation and eliminate prompt drift.</li>
+            <li>Edited and post-produced AI footage in <strong>Adobe Premiere Pro</strong>: cutting, color grading, and transitions for production-ready delivery.</li>
           </ul>
         </div>
 
@@ -577,7 +610,7 @@
           <div class="edu-college">Kamla Lohtia Sanatan Dharam College, Ludhiana</div>
         </div>
         <div class="edu-entry">
-          <div class="edu-degree" style="font-size: 9.5px;">Senior Secondary (10+2) 86%</div>
+          <div class="edu-degree" style="font-size: 9px;">Senior Secondary (10+2) 86%</div>
           <div class="edu-college">Sanatan Vidya Mandir Sen. Sec. School, Ludhiana (PSEB)</div>
         </div>
 
