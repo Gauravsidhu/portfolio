@@ -893,6 +893,126 @@
       box-shadow: 0 20px 42px -10px rgba(0, 0, 0, 0.8), 0 0 28px rgba(255, 71, 71, 0.12);
     }
 
+    /* SHOWREEL MASTER FEATURE CARD */
+    .showreel-card {
+      margin-bottom: 50px;
+      border-radius: 22px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #181824 0%, #0d0d12 100%);
+      border: 1px solid rgba(255, 71, 71, 0.28);
+      box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.8), 0 0 35px rgba(255, 71, 71, 0.09);
+      transition: all .35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .showreel-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 71, 71, 0.55);
+      box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.9), 0 0 45px rgba(255, 71, 71, 0.18);
+    }
+
+    .showreel-card .showreel-media {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9 !important;
+      background: #040407;
+      overflow: hidden;
+      cursor: pointer;
+      border-radius: 21px 21px 0 0;
+    }
+
+    .showreel-card .showreel-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .showreel-card:hover .showreel-media video {
+      transform: scale(1.02);
+    }
+
+    .showreel-badge-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .showreel-rec-dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #ff4747;
+      margin-right: 6px;
+      box-shadow: 0 0 8px #ff4747;
+      animation: pulseLed 1.8s infinite;
+    }
+
+    .showreel-info {
+      padding: 24px 28px 22px;
+    }
+
+    .showreel-info-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .showreel-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(20px, 2.3vw, 26px);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.025em;
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+
+    .showreel-info-main p {
+      color: #a1a1aa;
+      font-size: 14.5px;
+      line-height: 1.65;
+      max-width: 760px;
+    }
+
+    .showreel-action-box {
+      align-self: center;
+    }
+
+    .showreel-watch-btn {
+      white-space: nowrap;
+      cursor: pointer;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      font-size: 13.5px;
+      font-weight: 700;
+    }
+
+    .showreel-footer {
+      margin-top: 18px;
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--line);
+      font-size: 12px;
+      color: #a1a1aa;
+    }
+
+    .showreel-tags {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
     .short-media {
       position: relative;
       width: 100%;
@@ -2780,6 +2900,79 @@
   <section class="wrap" id="work">
     <div class="sec-head reveal-init">
       <div>
+        <div class="sec-tag">Official 2026 Showreel • Master Direction</div>
+        <h2>Director &amp; AI Filmmaker Showreel</h2>
+        <p>A flagship master reel showcasing photorealistic AI cinema, dramatic narrative pacing, volumetric lighting, and high-precision post-production.</p>
+      </div>
+    </div>
+
+    <!-- Master 16:9 Showreel Feature Card -->
+    <div class="card short-card showreel-card reveal-init delay-1"
+         data-video="videos/puneet-ohri-showreel.mp4"
+         data-title="Puneet Ohri — Official Filmmaking &amp; Editing Showreel"
+         data-tag="Official 2026 Showcase • 4K Master"
+         data-desc="Master showreel demonstrating complete end-to-end AI video production: character continuity, custom prompt architecture, cinematic motion dynamics, and color grading in Adobe Premiere Pro and DaVinci Resolve."
+         data-chips="Official Showreel,Runway Gen-3,Higgsfield,Premiere Pro,DaVinci Resolve,4K 60FPS">
+      <div class="short-media showreel-media" data-playing="false">
+        <video class="short-player" src="videos/puneet-ohri-showreel.mp4" loop muted playsinline preload="metadata"></video>
+        <div class="short-overlay-top">
+          <div class="showreel-badge-group">
+            <span class="short-badge"><span class="showreel-rec-dot"></span>OFFICIAL SHOWREEL • 16:9</span>
+            <span class="short-badge" style="color:var(--accent-light);border-color:rgba(255,71,71,0.35);">4K MASTER</span>
+          </div>
+          <div class="short-overlay-actions">
+            <button class="short-expand-btn" aria-label="Open Cinema Mode" title="Watch in 4K Cinema View">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </button>
+            <button class="short-vol-btn" aria-label="Toggle Sound" title="Toggle Sound">
+              <svg class="vol-icon-muted" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                <line x1="23" y1="9" x2="17" y2="15" />
+                <line x1="17" y1="9" x2="23" y2="15" />
+              </svg>
+              <svg class="vol-icon-unmuted" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+                <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="short-play-btn showreel-play-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="6 3 20 12 6 21 6 3" />
+          </svg>
+        </div>
+        <div class="short-progress-track">
+          <div class="short-progress-bar"></div>
+        </div>
+      </div>
+      <div class="card-info showreel-info">
+        <div class="showreel-info-main">
+          <div>
+            <span class="card-subtitle">Flagship Showcase • 2026 Director's Cut</span>
+            <h3 class="showreel-title">Puneet Ohri — Official Filmmaking &amp; Editing Showreel</h3>
+            <p>High-energy compilation of hyper-realistic AI video workflows, custom prompt engineering, complex visual storytelling, and surgical editorial timing finished in Premiere Pro and DaVinci Resolve.</p>
+          </div>
+          <div class="showreel-action-box">
+            <button class="btn-primary showreel-watch-btn" type="button">
+              <span>▶ Watch in 4K Cinema</span>
+            </button>
+          </div>
+        </div>
+        <div class="card-footer showreel-footer">
+          <div class="showreel-tags">
+            <span class="spec">Runway Gen-3</span>
+            <span>Higgsfield</span>
+            <span>Premiere Pro</span>
+            <span>DaVinci Resolve</span>
+          </div>
+          <span class="spec">Master 4K 60FPS</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-head reveal-init" style="margin-top: 55px;">
+      <div>
         <div class="sec-tag">Holyindia Series • YouTube Shorts</div>
         <h2>Featured AI Shorts &amp; Cinema Reels</h2>
         <p>Original high-retention 9:16 vertical films generated via Runway ML &amp; Higgsfield, polished in Adobe
@@ -3845,7 +4038,7 @@
       cinemaVideo.src = '';
     }
 
-    document.querySelectorAll('.short-expand-btn').forEach(btn => {
+    document.querySelectorAll('.short-expand-btn, .showreel-watch-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
         const card = btn.closest('.short-card');
